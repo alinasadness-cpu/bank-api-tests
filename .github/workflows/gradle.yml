@@ -24,11 +24,8 @@ jobs:
 
       - name: Start app in test mode
         run: |
-          ls -la artifacts/
-          nohup java -jar artifacts/app-ibank.jar -P:profile=test > app.log 2>&1 &
-          sleep 20
-          cat app.log
-          curl -v http://localhost:9999/api/system/users || echo "Service may not be ready"
+          java -jar artifacts/app-ibank.jar -P:profile=test &
+          sleep 15
 
       - name: Run tests
         run: ./gradlew test
