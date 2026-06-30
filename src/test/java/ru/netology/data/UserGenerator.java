@@ -24,7 +24,6 @@ public class UserGenerator {
     private UserGenerator() {
     }
 
-    // Генерация активного пользователя
     public static RegistrationDto generateActiveUser() {
         return new RegistrationDto(
                 faker.name().username(),
@@ -33,7 +32,7 @@ public class UserGenerator {
         );
     }
 
-    // Генерация заблокированного пользователя
+
     public static RegistrationDto generateBlockedUser() {
         return new RegistrationDto(
                 faker.name().username(),
@@ -42,7 +41,7 @@ public class UserGenerator {
         );
     }
 
-    // Генерация пользователя с пустым логином
+
     public static RegistrationDto generateUserWithEmptyLogin() {
         return new RegistrationDto(
                 "",
@@ -51,7 +50,7 @@ public class UserGenerator {
         );
     }
 
-    // Генерация пользователя с пустым паролем
+
     public static RegistrationDto generateUserWithEmptyPassword() {
         return new RegistrationDto(
                 faker.name().username(),
@@ -60,7 +59,7 @@ public class UserGenerator {
         );
     }
 
-    // Генерация пользователя с коротким логином
+
     public static RegistrationDto generateUserWithShortLogin() {
         return new RegistrationDto(
                 faker.lorem().characters(2),
@@ -69,7 +68,7 @@ public class UserGenerator {
         );
     }
 
-    // Генерация пользователя с коротким паролем
+
     public static RegistrationDto generateUserWithShortPassword() {
         return new RegistrationDto(
                 faker.name().username(),
@@ -78,7 +77,7 @@ public class UserGenerator {
         );
     }
 
-    // Регистрация пользователя через API
+
     public static void registerUser(RegistrationDto user) {
         given()
                 .spec(requestSpec)
