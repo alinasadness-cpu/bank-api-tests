@@ -1,8 +1,5 @@
 package ru.netology.data;
 
-import lombok.Getter;
-
-@Getter
 public enum UserStatus {
     ACTIVE("active"),
     BLOCKED("blocked");
@@ -11,5 +8,9 @@ public enum UserStatus {
 
     UserStatus(String value) {
         this.value = value;
+    }
+
+    public String getValue() {
+        return value;
     }
 }

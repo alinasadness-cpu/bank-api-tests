@@ -27,7 +27,7 @@ public class AuthTest {
                 .build();
     }
 
-    // ===================== ПОЗИТИВНЫЕ ТЕСТЫ =====================
+  
 
     @Test
     void shouldCreateAndLoginActiveUser() {
@@ -65,7 +65,7 @@ public class AuthTest {
                 .statusCode(403);
     }
 
-    // ===================== НЕГАТИВНЫЕ ТЕСТЫ =====================
+ 
 
     @Test
     void shouldNotLoginBlockedUser() {
@@ -161,7 +161,6 @@ public class AuthTest {
                 .statusCode(401);
     }
 
-    // ===================== ГРАНИЧНЫЕ ЗНАЧЕНИЯ =====================
 
     @Test
     void shouldNotCreateUserWithShortLogin() {

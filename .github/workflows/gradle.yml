@@ -24,14 +24,7 @@ jobs:
 
       - name: Start app in test mode
         run: |
-          # Проверяем, что файл существует
-          ls -la artifacts/
-          # Запускаем в фоне
           java -jar artifacts/app-ibank.jar -P:profile=test &
-          # Ждем запуска
-          sleep 15
-          # Проверяем, что сервис запущен
-          curl -v http://localhost:9999/api/system/users || echo "Service not responding"
 
       - name: Run tests
         run: ./gradlew test

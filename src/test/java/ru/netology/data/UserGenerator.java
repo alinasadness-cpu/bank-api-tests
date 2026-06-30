@@ -21,8 +21,7 @@ public class UserGenerator {
             .log(LogDetail.ALL)
             .build();
 
-    private UserGenerator() {
-    }
+    private UserGenerator() {}
 
     public static RegistrationDto generateActiveUser() {
         return new RegistrationDto(
@@ -32,7 +31,6 @@ public class UserGenerator {
         );
     }
 
-
     public static RegistrationDto generateBlockedUser() {
         return new RegistrationDto(
                 faker.name().username(),
@@ -40,7 +38,6 @@ public class UserGenerator {
                 UserStatus.BLOCKED.getValue()
         );
     }
-
 
     public static RegistrationDto generateUserWithEmptyLogin() {
         return new RegistrationDto(
@@ -50,7 +47,6 @@ public class UserGenerator {
         );
     }
 
-
     public static RegistrationDto generateUserWithEmptyPassword() {
         return new RegistrationDto(
                 faker.name().username(),
@@ -58,7 +54,6 @@ public class UserGenerator {
                 UserStatus.ACTIVE.getValue()
         );
     }
-
 
     public static RegistrationDto generateUserWithShortLogin() {
         return new RegistrationDto(
@@ -68,7 +63,6 @@ public class UserGenerator {
         );
     }
 
-
     public static RegistrationDto generateUserWithShortPassword() {
         return new RegistrationDto(
                 faker.name().username(),
@@ -76,7 +70,6 @@ public class UserGenerator {
                 UserStatus.ACTIVE.getValue()
         );
     }
-
 
     public static void registerUser(RegistrationDto user) {
         given()
