@@ -25,7 +25,6 @@ jobs:
       - name: Start app in test mode
         run: |
           java -jar artifacts/app-ibank.jar -P:profile=test &
-          sleep 15
 
       - name: Run tests
         run: ./gradlew test
