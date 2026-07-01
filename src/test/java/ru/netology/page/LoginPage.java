@@ -11,7 +11,8 @@ public class LoginPage {
     private final SelenideElement loginField = $("[data-test-id='login'] input");
     private final SelenideElement passwordField = $("input[name='password']");
     private final SelenideElement loginButton = $("[data-test-id='action-login']");
-    private final SelenideElement errorNotification = $(".notification__content");
+    private final SelenideElement errorNotification = $("[data-test-id='error-notification'] .notification__content");
+    private final SelenideElement dashboardTitle = $("[data-test-id='dashboard']");
 
     public LoginPage openPage() {
         open("http://localhost:9999");
@@ -30,8 +31,7 @@ public class LoginPage {
     }
 
     public void checkSuccess() {
-    
-        $("[data-test-id='logout']").shouldBe(visible);
-      
+        dashboardTitle.shouldBe(visible)
+                .shouldHave(text("Личный кабинет"));
     }
 }
