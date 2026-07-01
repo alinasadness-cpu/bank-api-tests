@@ -8,7 +8,6 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class LoginPage {
-
     private final SelenideElement loginField = $("[data-test-id='login'] input");
     private final SelenideElement passwordField = $("input[name='password']");
     private final SelenideElement loginButton = $("[data-test-id='action-login']");
@@ -31,7 +30,8 @@ public class LoginPage {
     }
 
     public void checkSuccess() {
-
-        errorNotification.shouldNotBe(visible);
+    
+        $("[data-test-id='logout']").shouldBe(visible);
+      
     }
 }
