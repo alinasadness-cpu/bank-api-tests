@@ -1,7 +1,5 @@
 package ru.netology.tests;
 
-import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.netology.data.RegistrationDto;
@@ -11,13 +9,6 @@ import ru.netology.page.LoginPage;
 import static com.codeborne.selenide.Selenide.open;
 
 public class LoginTest {
-
-    @BeforeAll
-    static void setUpAll() {
-        Configuration.headless = true;
-        Configuration.browserSize = "1920x1080";
-        Configuration.timeout = 10000;
-    }
 
     @BeforeEach
     void setup() {
@@ -32,7 +23,7 @@ public class LoginTest {
         LoginPage loginPage = new LoginPage();
         loginPage.openPage();
         loginPage.login(user.getLogin(), user.getPassword());
-        loginPage.checkSuccess();
+        loginPage.checkSuccess();  
     }
 
     @Test
