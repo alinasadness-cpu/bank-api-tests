@@ -23,7 +23,7 @@ public class LoginTest {
         LoginPage loginPage = new LoginPage();
         loginPage.openPage();
         loginPage.login(user.getLogin(), user.getPassword());
-        loginPage.checkSuccess();  
+        loginPage.checkSuccess();
     }
 
     @Test
